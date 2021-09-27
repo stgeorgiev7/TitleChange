@@ -1,7 +1,13 @@
 import "./App.css";
-import Counter from "./Counter";
+import React, {useState, useEffect} from "react";
 
 function App() {
+  const [counter, setCounter] = useState(1);
+
+    useEffect(()=> {
+        document.title = `Count (${counter})`;
+    },);
+
   return (
     <div className="App">
       <section class="hero">
@@ -12,7 +18,7 @@ function App() {
       </section>
       <div class="container is-fullhd">
         <div class="notification">
-          <Counter />
+        <button onClick={() => {setCounter(counter+1);}}>Count({counter})</button>
         </div>
       </div>
     </div>
